@@ -24,6 +24,7 @@ $('button').on('click', function () {
     } else {
 
         let uppersConfirm = confirm('Do you want your password to contain uppercase letters?');
+        let lowersConfirm = confirm('Do you want your password to contain lowercase letters?');
         let numbersConfirm = confirm('Do you want your password to contain numbers?');
         let specialCharConfirm = confirm('Do you want your password to contain special characters?');
 
@@ -31,24 +32,26 @@ $('button').on('click', function () {
         if (uppersConfirm) {
             userPw = userPw.concat(upperCase);
         }
-        else if (numbersConfirm) {
+         if (lowersConfirm) {
+            userPw = userPw.concat(lowerCase);
+        }
+         if (numbersConfirm) {
             userPw = userPw.concat(nums)
         }
-        else if (specialCharConfirm) {
+         if (specialCharConfirm) {
             userPw = userPw.concat(specialChar)
         };
 
-        userPw = userPw.concat(lowerCase);
 
         console.log(userPw);
 
-        for (var i = 0; i < pwLength; i++){
+        for (var i = 0; i < pwLength; i++) {
 
-        let randompW = userPw[Math.floor(Math.random() * userPw.length)]
-        $('.pwDisplay').append(randompW);
+            let randompW = userPw[Math.floor(Math.random() * userPw.length)]
+            $('.pwDisplay').append(randompW);
 
         }
-        
+
     }
 
 });

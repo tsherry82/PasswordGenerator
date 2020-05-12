@@ -15,12 +15,10 @@ $('button').on('click', function () {
     var specialChar = ['/', '?', '!', '@', '#', '$', '%', '^', '&', '*', '(', ')', '-', '=', '+'];
 
     if (!pwLength) {
-        alert('Please select a number between 8 and 128');
-        pwLength = prompt('How long do you want your password to be?');
+        alert('Please enter a number between 8 and 128');
     }
     else if (pwLength > 128 || pwLength < 8) {
         alert('Sorry password must be between 8 & 128 characters');
-        pwLength = prompt('How long do you want your password to be?');
     } else {
 
         let uppersConfirm = confirm('Do you want your password to contain uppercase letters?');
@@ -42,16 +40,10 @@ $('button').on('click', function () {
             userPw = userPw.concat(specialChar)
         };
 
-
-        console.log(userPw);
-
         for (var i = 0; i < pwLength; i++) {
-
             let randompW = userPw[Math.floor(Math.random() * userPw.length)]
             $('.pwDisplay').append(randompW);
-
         }
-
     }
 
 });
